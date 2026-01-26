@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Turnos | CodeByMike7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen font-sans p-6">
+    <div class="max-w-md mx-auto">
+        <a href="index.html" class="text-slate-500 text-xs font-bold mb-8 block"><i class="fa-solid fa-arrow-left"></i> VOLVER AL PORTAL</a>
+        <h1 class="text-3xl font-black mb-2 text-blue-500 uppercase italic">Mike's Barber</h1>
+        <p class="text-slate-400 mb-10 text-sm">Elegí tu horario y reservá.</p>
+
+        <div class="space-y-6">
+            <div class="bg-slate-800 p-6 rounded-[2rem] border border-slate-700">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-4">Servicio</label>
+                <select id="serv" class="w-full bg-slate-900 border-none p-4 rounded-2xl text-sm font-bold">
+                    <option>Corte de Pelo - .800</option>
+                    <option>Corte y Barba - .500</option>
+                </select>
+            </div>
+
+            <div class="bg-slate-800 p-6 rounded-[2rem] border border-slate-700">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-4">Horarios Disponibles</label>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="setH('14:00')" class="h-btn bg-slate-900 py-4 rounded-2xl text-sm font-bold border border-slate-700">14:00</button>
+                    <button onclick="setH('15:00')" class="h-btn bg-slate-900 py-4 rounded-2xl text-sm font-bold border border-slate-700">15:00</button>
+                    <button onclick="setH('18:00')" class="h-btn bg-slate-900 py-4 rounded-2xl text-sm font-bold border border-slate-700">18:00</button>
+                    <button onclick="setH('19:00')" class="h-btn bg-slate-900 py-4 rounded-2xl text-sm font-bold border border-slate-700">19:00</button>
+                </div>
+            </div>
+
+            <button onclick="book()" class="w-full bg-blue-600 py-5 rounded-[2rem] font-black text-lg shadow-xl shadow-blue-900/20">RESERVAR AHORA</button>
+        </div>
+    </div>
+
+    <script>
+        let hSel = "";
+        function setH(h) { 
+            hSel = h; 
+            document.querySelectorAll('.h-btn').forEach(b => b.classList.remove('bg-blue-600', 'border-blue-600'));
+            event.target.classList.add('bg-blue-600', 'border-blue-600');
+        }
+        function book() {
+            if(!hSel) return alert("Elegí un horario");
+            const msj = `Hola! Quiero un turno para  a las `;
+            window.open(`https://wa.me/541136139401?text=`, '_blank');
+        }
+    </script>
+</body>
+</html>
