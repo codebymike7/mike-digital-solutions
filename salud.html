@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Médico | Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-blue-50/30">
+    <header class="p-8 bg-white shadow-sm flex items-center gap-4 max-w-md mx-auto rounded-b-[2rem]">
+        <div class="bg-blue-600 w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl"><i class="fa-solid fa-notes-medical"></i></div>
+        <div><h1 class="text-xl font-bold text-slate-800">CMA Salud</h1><p class="text-[10px] font-bold text-blue-500 uppercase">Turnos Digitales</p></div>
+    </header>
+    <main class="max-w-md mx-auto p-6 space-y-4">
+        <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest px-2">Especialidades</h2>
+        <div class="bg-white p-5 rounded-3xl flex justify-between items-center shadow-sm border border-slate-100">
+            <div class="flex items-center gap-4"><i class="fa-solid fa-tooth text-blue-400 text-xl"></i><span class="font-bold">Odontología</span></div>
+            <button onclick="turno('Odontología')" class="bg-blue-50 text-blue-600 px-4 py-2 rounded-xl text-xs font-black">RESERVAR</button>
+        </div>
+        <div class="bg-white p-5 rounded-3xl flex justify-between items-center shadow-sm border border-slate-100">
+            <div class="flex items-center gap-4"><i class="fa-solid fa-brain text-purple-400 text-xl"></i><span class="font-bold">Psicología</span></div>
+            <button onclick="turno('Psicología')" class="bg-purple-50 text-purple-600 px-4 py-2 rounded-xl text-xs font-black">RESERVAR</button>
+        </div>
+    </main>
+    <script>function turno(esp){ window.open(`https://wa.me/541136139401?text=Hola! Solicito un turno para la especialidad de ${esp}`, '_blank'); }</script>
+</body>
+</html>
