@@ -3,54 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Digital | CodeByMike7</title>
+    <title>Demo Menú Digital | CodeByMike7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .product-card:active { transform: scale(0.98); }
+    </style>
 </head>
-<body class="bg-slate-50 pb-24 font-sans">
-    <header class="bg-white border-b p-6 sticky top-0 z-50 flex justify-between items-center">
-        <h1 class="text-xl font-black italic text-slate-800">MIKE'S <span class="text-orange-500">BURGERS</span></h1>
-        <a href="index.html" class="text-xs font-bold text-slate-400">VOLVER AL PORTAL</a>
+<body class="bg-slate-50 pb-32">
+
+    <header class="bg-white p-6 shadow-sm mb-6">
+        <div class="max-w-md mx-auto flex items-center gap-4">
+            <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-orange-100">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-black text-slate-900">MIKE BURGER 🔥</h1>
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-wider">Demo de Menú Digital</p>
+            </div>
+        </div>
     </header>
 
-    <main class="max-w-md mx-auto p-4 space-y-6">
-        <div class="bg-white p-4 rounded-3xl shadow-sm flex gap-4 items-center border border-slate-100">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200" class="w-24 h-24 rounded-2xl object-cover">
+    <main class="max-w-md mx-auto px-4 space-y-4">
+        
+        <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest mt-8 mb-2">Hamburguesas Premium</h2>
+
+        <div class="bg-white p-4 rounded-[2rem] shadow-sm border border-slate-100 flex justify-between items-center group product-card transition-all">
             <div class="flex-1">
-                <h3 class="font-bold">Doble Bacon Cheese</h3>
-                <p class="text-blue-600 font-black">.500</p>
-                <button onclick="agregar('Doble Bacon Cheese', 4500)" class="mt-2 w-full bg-slate-900 text-white py-2 rounded-xl text-xs font-bold">+ AGREGAR</button>
+                <h3 class="font-extrabold text-slate-800">Doble Cheddar</h3>
+                <p class="text-slate-500 text-xs mb-2">Doble carne, doble cheddar, bacon y salsa secreta.</p>
+                <span class="text-orange-600 font-black">$8.500</span>
             </div>
+            <button onclick="agregarAlPedido('Doble Cheddar', 8500)" class="ml-4 w-12 h-12 bg-slate-900 text-white rounded-2xl hover:bg-orange-500 transition-colors flex items-center justify-center">
+                <i class="fa-solid fa-plus"></i>
+            </button>
         </div>
 
-        <div class="bg-white p-4 rounded-3xl shadow-sm flex gap-4 items-center border border-slate-100">
-            <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=200" class="w-24 h-24 rounded-2xl object-cover">
+        <div class="bg-white p-4 rounded-[2rem] shadow-sm border border-slate-100 flex justify-between items-center product-card transition-all">
             <div class="flex-1">
-                <h3 class="font-bold">Classic Onion</h3>
-                <p class="text-blue-600 font-black">.800</p>
-                <button onclick="agregar('Classic Onion', 3800)" class="mt-2 w-full bg-slate-900 text-white py-2 rounded-xl text-xs font-bold">+ AGREGAR</button>
+                <h3 class="font-extrabold text-slate-800">Smash Onion</h3>
+                <p class="text-slate-500 text-xs mb-2">Cebolla caramelizada, queso suizo y alioli.</p>
+                <span class="text-orange-600 font-black">$7.900</span>
             </div>
+            <button onclick="agregarAlPedido('Smash Onion', 7900)" class="ml-4 w-12 h-12 bg-slate-900 text-white rounded-2xl hover:bg-orange-500 transition-colors flex items-center justify-center">
+                <i class="fa-solid fa-plus"></i>
+            </button>
         </div>
+
+        <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest mt-8 mb-2">Bebidas Frías</h2>
+
+        <div class="bg-white p-4 rounded-[2rem] shadow-sm border border-slate-100 flex justify-between items-center product-card transition-all">
+            <div class="flex-1">
+                <h3 class="font-extrabold text-slate-800">Gaseosa 500ml</h3>
+                <span class="text-orange-600 font-black">$2.200</span>
+            </div>
+            <button onclick="agregarAlPedido('Gaseosa 500ml', 2200)" class="ml-4 w-12 h-12 bg-slate-900 text-white rounded-2xl hover:bg-orange-500 transition-colors flex items-center justify-center">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+
     </main>
 
-    <div id="cart-bar" class="fixed bottom-6 left-6 right-6 bg-slate-900 text-white p-5 rounded-[2.5rem] shadow-2xl flex justify-between items-center hidden">
+    <div id="cart-footer" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-slate-900 text-white p-6 rounded-[2.5rem] shadow-2xl flex justify-between items-center hidden">
         <div>
-            <p class="text-[10px] text-slate-400 uppercase font-bold">Total pedido</p>
-            <p id="total-price" class="text-xl font-black text-orange-400"></p>
+            <p id="items-count" class="text-[10px] font-bold uppercase text-slate-400 tracking-widest">0 PRODUCTOS</p>
+            <p id="total-price" class="text-xl font-black text-orange-400">$0</p>
         </div>
-        <button onclick="enviarPedido()" class="bg-green-500 px-6 py-3 rounded-2xl font-bold text-sm">PEDIR POR WA</button>
+        <button onclick="enviarWhatsApp()" class="bg-orange-500 px-6 py-3 rounded-2xl font-black text-sm hover:bg-white hover:text-orange-500 transition-all">
+            PEDIR POR WHATSAPP
+        </button>
     </div>
 
     <script>
-        let carrito = []; let total = 0;
-        function agregar(p, pr) {
-            carrito.push(p); total += pr;
-            document.getElementById('total-price').innerText = `$`;
-            document.getElementById('cart-bar').classList.remove('hidden');
+        let pedido = [];
+        let total = 0;
+
+        function agregarAlPedido(nombre, precio) {
+            pedido.push(nombre);
+            total += precio;
+            actualizarUI();
         }
-        function enviarPedido() {
-            const msj = `Hola Mike's Burgers! Quisiera:%0A- %0A%0ATotal: $`;
-            window.open(`https://wa.me/541136139401?text=`, '_blank');
+
+        function actualizarUI() {
+            const footer = document.getElementById('cart-footer');
+            footer.classList.remove('hidden');
+            document.getElementById('items-count').innerText = `${pedido.length} PRODUCTOS`;
+            document.getElementById('total-price').innerText = `$${total.toLocaleString('es-AR')}`;
+        }
+
+        function enviarWhatsApp() {
+            const numero = "541136139401"; // Tu número
+            const texto = `Hola Mike! Quisiera hacer un pedido:\n- ${pedido.join('\n- ')}\n\n*Total: $${total}*`;
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank');
         }
     </script>
 </body>
