@@ -3,101 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Menú Digital | CodeByMike7</title>
+    <title>Menú Premium | CodeByMike7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .product-card:active { transform: scale(0.98); }
     </style>
 </head>
-<body class="bg-slate-50 pb-32">
+<body class="bg-slate-50 pb-40">
 
-    <header class="bg-white p-6 shadow-sm mb-6">
-        <div class="max-w-md mx-auto flex items-center gap-4">
-            <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-orange-100">
-                <i class="fa-solid fa-fire-flame-curved"></i>
-            </div>
-            <div>
-                <h1 class="text-xl font-black text-slate-900">MIKE BURGER 🔥</h1>
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-wider">Demo de Menú Digital</p>
-            </div>
+    <header class="bg-white p-6 shadow-sm sticky top-0 z-10 border-b border-slate-100">
+        <div class="max-w-md mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-black italic">MIKE BURGER 🔥</h1>
+            <span class="bg-green-100 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Abierto</span>
         </div>
     </header>
 
-    <main class="max-w-md mx-auto px-4 space-y-4">
+    <main class="max-w-md mx-auto p-4 space-y-6">
         
-        <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest mt-8 mb-2">Hamburguesas Premium</h2>
-
-        <div class="bg-white p-4 rounded-[2rem] shadow-sm border border-slate-100 flex justify-between items-center group product-card transition-all">
-            <div class="flex-1">
-                <h3 class="font-extrabold text-slate-800">Doble Cheddar</h3>
-                <p class="text-slate-500 text-xs mb-2">Doble carne, doble cheddar, bacon y salsa secreta.</p>
-                <span class="text-orange-600 font-black">$8.500</span>
+        <div class="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100">
+            <div class="flex justify-between mb-4">
+                <h2 class="text-lg font-black text-slate-800">Doble Cheddar Deluxe</h2>
+                <span class="text-blue-600 font-black">$9.500</span>
             </div>
-            <button onclick="agregarAlPedido('Doble Cheddar', 8500)" class="ml-4 w-12 h-12 bg-slate-900 text-white rounded-2xl hover:bg-orange-500 transition-colors flex items-center justify-center">
-                <i class="fa-solid fa-plus"></i>
+            
+            <div class="space-y-3 mb-6">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">¿Algo extra?</p>
+                <label class="flex justify-between items-center bg-slate-50 p-3 rounded-xl cursor-pointer">
+                    <span class="text-sm font-semibold text-slate-600">+ Extra Bacon</span>
+                    <input type="checkbox" value="Extra Bacon" data-price="1200" class="extra-item w-5 h-5 accent-blue-600">
+                </label>
+                <label class="flex justify-between items-center bg-slate-50 p-3 rounded-xl cursor-pointer">
+                    <span class="text-sm font-semibold text-slate-600">+ Papas Grandes</span>
+                    <input type="checkbox" value="Papas Grandes" data-price="1500" class="extra-item w-5 h-5 accent-blue-600">
+                </label>
+            </div>
+
+            <button onclick="agregarConOpciones('Doble Cheddar Deluxe', 9500)" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black hover:bg-blue-600 transition-all">
+                AGREGAR AL PEDIDO
             </button>
         </div>
 
-        <div class="bg-white p-4 rounded-[2rem] shadow-sm border border-slate-100 flex justify-between items-center product-card transition-all">
-            <div class="flex-1">
-                <h3 class="font-extrabold text-slate-800">Smash Onion</h3>
-                <p class="text-slate-500 text-xs mb-2">Cebolla caramelizada, queso suizo y alioli.</p>
-                <span class="text-orange-600 font-black">$7.900</span>
+        <div class="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 text-center">Forma de Entrega</p>
+            <div class="flex gap-4">
+                <button onclick="setMetodo('Delivery')" id="btn-delivery" class="flex-1 p-4 border-2 border-slate-100 rounded-2xl font-bold text-sm text-slate-500 transition-all">🛵 Delivery</button>
+                <button onclick="setMetodo('Retiro')" id="btn-retiro" class="flex-1 p-4 border-2 border-slate-100 rounded-2xl font-bold text-sm text-slate-500 transition-all">🏪 Retiro</button>
             </div>
-            <button onclick="agregarAlPedido('Smash Onion', 7900)" class="ml-4 w-12 h-12 bg-slate-900 text-white rounded-2xl hover:bg-orange-500 transition-colors flex items-center justify-center">
-                <i class="fa-solid fa-plus"></i>
-            </button>
-        </div>
-
-        <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest mt-8 mb-2">Bebidas Frías</h2>
-
-        <div class="bg-white p-4 rounded-[2rem] shadow-sm border border-slate-100 flex justify-between items-center product-card transition-all">
-            <div class="flex-1">
-                <h3 class="font-extrabold text-slate-800">Gaseosa 500ml</h3>
-                <span class="text-orange-600 font-black">$2.200</span>
-            </div>
-            <button onclick="agregarAlPedido('Gaseosa 500ml', 2200)" class="ml-4 w-12 h-12 bg-slate-900 text-white rounded-2xl hover:bg-orange-500 transition-colors flex items-center justify-center">
-                <i class="fa-solid fa-plus"></i>
-            </button>
         </div>
 
     </main>
 
-    <div id="cart-footer" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-slate-900 text-white p-6 rounded-[2.5rem] shadow-2xl flex justify-between items-center hidden">
-        <div>
-            <p id="items-count" class="text-[10px] font-bold uppercase text-slate-400 tracking-widest">0 PRODUCTOS</p>
-            <p id="total-price" class="text-xl font-black text-orange-400">$0</p>
+    <div id="cart-footer" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-slate-900 text-white p-6 rounded-[2.5rem] shadow-2xl hidden transform transition-all">
+        <div class="flex justify-between items-center mb-4">
+            <div>
+                <p id="items-desc" class="text-[10px] font-bold uppercase text-slate-400">Total a pagar</p>
+                <p id="total-price" class="text-2xl font-black text-blue-400">$0</p>
+            </div>
+            <button onclick="enviarWhatsApp()" class="bg-blue-600 px-8 py-4 rounded-2xl font-black text-sm hover:scale-105 transition-all">ENVIAR PEDIDO</button>
         </div>
-        <button onclick="enviarWhatsApp()" class="bg-orange-500 px-6 py-3 rounded-2xl font-black text-sm hover:bg-white hover:text-orange-500 transition-all">
-            PEDIR POR WHATSAPP
-        </button>
     </div>
 
     <script>
-        let pedido = [];
-        let total = 0;
+        let carrito = [];
+        let metodoEntrega = "";
 
-        function agregarAlPedido(nombre, precio) {
-            pedido.push(nombre);
-            total += precio;
-            actualizarUI();
+        function setMetodo(metodo) {
+            metodoEntrega = metodo;
+            document.getElementById('btn-delivery').classList.remove('border-blue-600', 'text-blue-600', 'bg-blue-50');
+            document.getElementById('btn-retiro').classList.remove('border-blue-600', 'text-blue-600', 'bg-blue-50');
+            document.getElementById('btn-' + metodo.toLowerCase()).classList.add('border-blue-600', 'text-blue-600', 'bg-blue-50');
         }
 
-        function actualizarUI() {
-            const footer = document.getElementById('cart-footer');
-            footer.classList.remove('hidden');
-            document.getElementById('items-count').innerText = `${pedido.length} PRODUCTOS`;
+        function agregarConOpciones(nombre, precioBase) {
+            let itemPrecio = precioBase;
+            let extras = [];
+            
+            document.querySelectorAll('.extra-item:checked').forEach(el => {
+                extras.push(el.value);
+                itemPrecio += parseInt(el.getAttribute('data-price'));
+            });
+
+            carrito.push({ nombre, precio: itemPrecio, extras });
+            actualizarTotal();
+        }
+
+        function actualizarTotal() {
+            let total = carrito.reduce((sum, item) => sum + item.precio, 0);
+            document.getElementById('cart-footer').classList.remove('hidden');
             document.getElementById('total-price').innerText = `$${total.toLocaleString('es-AR')}`;
         }
 
         function enviarWhatsApp() {
-            const numero = "541136139401"; // Tu número
-            const texto = `Hola Mike! Quisiera hacer un pedido:\n- ${pedido.join('\n- ')}\n\n*Total: $${total}*`;
-            const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
-            window.open(url, '_blank');
+            if(!metodoEntrega) return alert("Elegí Delivery o Retiro");
+            
+            let total = carrito.reduce((sum, item) => sum + item.precio, 0);
+            let detalle = carrito.map(i => `*${i.nombre}* (${i.extras.join(', ') || 'Sin extras'}) - $${i.precio}`).join('\n');
+            
+            const texto = `¡Nuevo Pedido! 🍔\n\n${detalle}\n\n📍 *Entrega:* ${metodoEntrega}\n💰 *TOTAL:* $${total}`;
+            window.open(`https://wa.me/541136139401?text=${encodeURIComponent(texto)}`, '_blank');
         }
     </script>
 </body>
