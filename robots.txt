@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codebymike7.github.io/mike-digital-solutions/sitemap.xml
