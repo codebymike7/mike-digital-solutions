@@ -3,83 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva de Turnos | CodeByMike7</title>
+    <title>Reserva Elite | CodeByMike7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .time-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; }
+        .active-choice { border-color: #2563eb !important; background-color: #eff6ff !important; color: #2563eb !important; }
     </style>
 </head>
 <body class="bg-slate-50 pb-20">
 
-    <header class="bg-white p-6 shadow-sm mb-8">
-        <div class="max-w-md mx-auto flex flex-col items-center text-center">
-            <div class="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center text-white text-3xl mb-4 shadow-xl shadow-blue-100">
-                <i class="fa-solid fa-scissors"></i>
-            </div>
-            <h1 class="text-2xl font-black text-slate-900">MIKE BARBER SHOP 💈</h1>
-            <p class="text-slate-400 text-sm font-bold uppercase tracking-widest">Reserva tu turno online</p>
+    <header class="bg-white p-6 shadow-sm mb-8 sticky top-0 z-10">
+        <div class="max-w-md mx-auto text-center">
+            <h1 class="text-xl font-black tracking-tighter">MIKE BARBER SHOP 💈</h1>
         </div>
     </header>
 
-    <main class="max-w-md mx-auto px-6 space-y-8">
+    <main class="max-w-md mx-auto px-6 space-y-10">
         
         <section>
-            <label class="block text-xs font-black text-blue-600 uppercase tracking-widest mb-3">1. Seleccioná el servicio</label>
-            <select id="servicio" class="w-full p-4 rounded-2xl border-2 border-slate-100 bg-white font-bold text-slate-700 outline-none focus:border-blue-600 transition-all">
-                <option value="Corte de Pelo">Corte de Pelo - $6.000</option>
-                <option value="Barba y Perfilado">Barba y Perfilado - $4.500</option>
-                <option value="Corte + Barba">Combo Corte + Barba - $9.500</option>
-            </select>
-        </section>
-
-        <section>
-            <label class="block text-xs font-black text-blue-600 uppercase tracking-widest mb-3">2. Elegí el día</label>
-            <input type="date" id="fecha" class="w-full p-4 rounded-2xl border-2 border-slate-100 bg-white font-bold text-slate-700 outline-none focus:border-blue-600 transition-all">
-        </section>
-
-        <section>
-            <label class="block text-xs font-black text-blue-600 uppercase tracking-widest mb-3">3. Horarios disponibles</label>
-            <div class="grid grid-cols-3 gap-3">
-                <button type="button" onclick="selectTime(this)" class="time-btn p-3 border-2 border-slate-100 bg-white rounded-xl text-sm font-bold text-slate-600 hover:border-blue-600 transition-all">09:00</button>
-                <button type="button" onclick="selectTime(this)" class="time-btn p-3 border-2 border-slate-100 bg-white rounded-xl text-sm font-bold text-slate-600 hover:border-blue-600 transition-all">10:30</button>
-                <button type="button" onclick="selectTime(this)" class="time-btn p-3 border-2 border-slate-100 bg-white rounded-xl text-sm font-bold text-slate-600 hover:border-blue-600 transition-all">15:00</button>
-                <button type="button" onclick="selectTime(this)" class="time-btn p-3 border-2 border-slate-100 bg-white rounded-xl text-sm font-bold text-slate-600 hover:border-blue-600 transition-all">17:30</button>
-                <button type="button" onclick="selectTime(this)" class="time-btn p-3 border-2 border-slate-100 bg-white rounded-xl text-sm font-bold text-slate-600 hover:border-blue-600 transition-all">19:00</button>
+            <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">1. Elegí tu Barbero</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="setPro(this, 'Mike')" class="pro-btn p-4 border-2 border-slate-100 bg-white rounded-2xl transition-all">
+                    <img src="https://ui-avatars.com/api/?name=Mike+B&background=2563eb&color=fff" class="w-12 h-12 rounded-full mx-auto mb-2">
+                    <p class="font-bold text-sm">Mike</p>
+                </button>
+                <button onclick="setPro(this, 'Nico')" class="pro-btn p-4 border-2 border-slate-100 bg-white rounded-2xl transition-all">
+                    <img src="https://ui-avatars.com/api/?name=Nico+S&background=cbd5e1&color=64748b" class="w-12 h-12 rounded-full mx-auto mb-2">
+                    <p class="font-bold text-sm">Nico</p>
+                </button>
             </div>
         </section>
 
-        <button onclick="confirmarTurno()" class="w-full bg-blue-600 text-white py-5 rounded-[2rem] font-black text-lg shadow-xl shadow-blue-100 hover:scale-[1.02] transition-all">
-            SOLICITAR TURNO 🚀
-        </button>
-
-    </main>
-
-    <script>
-        let horaElegida = "";
-
-        function selectTime(btn) {
-            document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            horaElegida = btn.innerText;
-        }
-
-        function confirmarTurno() {
-            const servicio = document.getElementById('servicio').value;
-            const fecha = document.getElementById('fecha').value;
-            const numero = "541136139401";
-
-            if (!fecha || !horaElegida) {
-                alert("Por favor elegí fecha y hora");
-                return;
-            }
-
-            const texto = `¡Hola Mike! Quisiera reservar un turno:\n\n✂️ *Servicio:* ${servicio}\n📅 *Fecha:* ${fecha}\n⏰ *Hora:* ${horaElegida}\n\n¿Tenés disponible?`;
-            const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
-            window.open(url, '_blank');
-        }
-    </script>
-</body>
-</html>
+        <section>
+            <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">2. ¿Qué te vas a hacer?</h2>
+            <select id="servicio" class="w-full p-4 rounded-2xl border-2 border-slate-100 bg-white font-bold outline-none focus:border-blue
