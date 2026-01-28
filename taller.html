@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Center | Demo Técnica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-white pb-20">
+
+    <header class="p-8 text-center border-b border-zinc-800">
+        <div class="w-16 h-16 bg-yellow-400 rounded-2xl mx-auto mb-4 flex items-center justify-center text-zinc-950 text-2xl">
+            <i class="fa-solid fa-car-side"></i>
+        </div>
+        <h1 class="text-2xl font-black tracking-tighter uppercase italic">Auto <span class="text-yellow-400">Solution</span></h1>
+    </header>
+
+    <main class="max-w-md mx-auto p-6 space-y-4">
+        <p class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest text-center mb-6">Seleccione un servicio técnico</p>
+        
+        <button onclick="selectService('Mantenimiento General')" class="w-full flex items-center justify-between p-6 bg-zinc-900 rounded-[2rem] border border-zinc-800 hover:border-yellow-400 transition-all group">
+            <div class="text-left">
+                <h3 class="font-black text-lg">Mantenimiento</h3>
+                <p class="text-xs text-zinc-500">Cambio de filtros y revisión</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-yellow-400"></i>
+        </button>
+
+        <button onclick="selectService('Limpieza Detallada')" class="w-full flex items-center justify-between p-6 bg-zinc-900 rounded-[2rem] border border-zinc-800 hover:border-yellow-400 transition-all group">
+            <div class="text-left">
+                <h3 class="font-black text-lg">Detailing</h3>
+                <p class="text-xs text-zinc-500">Limpieza profunda y protección</p>
+            </div>
+            <i class="fa-solid fa-chevron-right text-yellow-400"></i>
+        </button>
+    </main>
+
+    <script>
+        function selectService(servicio) {
+            const msg = `Hola! Quiero consultar disponibilidad para el servicio de: *${servicio}*.`;
+            window.open(`https://wa.me/541136139401?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
