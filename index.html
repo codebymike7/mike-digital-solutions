@@ -49,11 +49,19 @@
     </nav>
 
     <header class="p-8 text-center max-w-md mx-auto">
-        <h2 class="text-3xl font-extrabold leading-tight mb-3 text-slate-900">Demos <span class="text-blue-600">Reales</span></h2>
-        <p class="text-slate-500 text-sm font-medium">Sistemas diseñados para potenciar comercios en Rafael Calzada.</p>
+        <h2 class="text-3xl font-extrabold leading-tight mb-3 text-slate-900">Catálogo <span class="text-blue-600">Pro</span></h2>
+        <p class="text-slate-500 text-sm font-medium">Soluciones digitales para potenciar negocios e industrias en Rafael Calzada.</p>
     </header>
 
     <main class="p-4 max-w-md mx-auto">
+
+        <a href="industria.html" class="demo-card border-l-4 border-l-slate-800">
+            <div class="icon-box bg-slate-800 shadow-lg shadow-slate-100"><i class="fa-solid fa-industry"></i></div>
+            <div class="flex-1">
+                <h3 class="font-bold text-slate-800 text-sm">Industria Automotriz</h3>
+                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">Plantas & Distribución →</p>
+            </div>
+        </a>
 
         <a href="menu.html" class="demo-card">
             <div class="icon-box bg-orange-500 shadow-lg shadow-orange-100"><i class="fa-solid fa-utensils"></i></div>
@@ -133,33 +141,3 @@
                 <h3 class="font-bold text-white text-sm">Panel Admin</h3>
                 <p class="text-blue-400 font-bold text-[9px] uppercase tracking-wider">Gestión de Negocio →</p>
             </div>
-        </a>
-
-    </main>
-
-    <footer class="p-12 text-center bg-white mt-10 border-t border-slate-200">
-        <div class="max-w-md mx-auto">
-            <h3 class="text-xl font-black text-slate-800 mb-2">¿Necesitás algo a medida?</h3>
-            <p class="text-slate-500 text-xs mb-8">Desarrollamos sistemas personalizados según la necesidad de tu comercio.</p>
-            
-            <button onclick="solicitarPresupuesto()" class="w-full bg-blue-600 text-white font-extrabold py-5 rounded-2xl shadow-xl shadow-blue-200 flex items-center justify-center gap-3 active:scale-95 transition-all">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                SOLICITAR PRESUPUESTO
-            </button>
-
-            <div class="mt-12">
-                <div class="text-lg font-black mb-1 italic text-slate-300 tracking-tighter">CODEBYMIKE7</div>
-                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-[0.3em]">2026 • Rafael Calzada</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function solicitarPresupuesto() {
-            const msj = "¡Hola Mike! Vi tus demos y me gustaría pedirte un presupuesto para un sistema personalizado.";
-            window.open(`https://wa.me/541136139401?text=${encodeURIComponent(msj)}`, '_blank');
-        }
-    </script>
-
-</body>
-</html>
