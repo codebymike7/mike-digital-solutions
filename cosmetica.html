@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Demo | Cosmética</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+</head>
+<body class="bg-pink-50/30 pb-20">
+    <header class="bg-white p-6 text-center shadow-sm border-b border-pink-100">
+        <h1 class="text-2xl font-black text-pink-600 tracking-tighter italic">GLAM <span class="text-slate-800">BOUTIQUE</span></h1>
+        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Revendedora Oficial Natura / Avon</p>
+    </header>
+
+    <main class="max-w-md mx-auto p-4 space-y-6">
+        <div class="bg-white rounded-[2.5rem] p-6 shadow-sm border border-pink-100">
+            <div class="aspect-square bg-pink-100 rounded-3xl mb-4 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-black text-lg text-slate-800">Labial Matte Intenso</h3>
+            <p class="text-xs text-slate-500 mb-4">Larga duración 24hs. No transfiere.</p>
+            
+            <div class="flex gap-2 mb-6">
+                <button onclick="setTono('Rojo Fuego', this)" class="w-8 h-8 rounded-full bg-red-600 border-2 border-white ring-2 ring-transparent transition-all"></button>
+                <button onclick="setTono('Nude Rose', this)" class="w-8 h-8 rounded-full bg-pink-300 border-2 border-white ring-2 ring-transparent transition-all"></button>
+                <button onclick="setTono('Vino', this)" class="w-8 h-8 rounded-full bg-red-900 border-2 border-white ring-2 ring-transparent transition-all"></button>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <span class="text-2xl font-black text-slate-900">$8.400</span>
+                <button onclick="pedidoCosmetica('Labial Matte')" class="bg-pink-600 text-white px-6 py-3 rounded-2xl font-bold text-xs shadow-lg shadow-pink-200">PEDIR POR WHATSAPP</button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] p-6 shadow-sm border border-pink-100">
+            <div class="aspect-square bg-pink-50 rounded-3xl mb-4 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-black text-lg text-slate-800">Sérum Facial Hidratante</h3>
+            <p class="text-xs text-slate-500 mb-4">Con Vitamina C y ácido hialurónico.</p>
+            <div class="flex justify-between items-center">
+                <span class="text-2xl font-black text-slate-900">$12.500</span>
+                <button onclick="pedidoCosmetica('Sérum Facial')" class="bg-pink-600 text-white px-6 py-3 rounded-2xl font-bold text-xs shadow-lg shadow-pink-200">PEDIR AHORA</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let tonoSeleccionado = "No especificado";
+        function setTono(t, btn) { 
+            tonoSeleccionado = t;
+            // Quitar anillos de otros botones
+            document.querySelectorAll('button').forEach(b => b.classList.remove('ring-pink-400'));
+            // Poner anillo al seleccionado
+            btn.classList.add('ring-pink-400');
+        }
+        function pedidoCosmetica(prod) {
+            const msg = `¡Hola! Me interesa el *${prod}* (Tono: ${tonoSeleccionado}). ¿Lo tenés disponible?`;
+            window.open(`https://wa.me/541136139401?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
