@@ -3,169 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeByMike7 | Desarrollo Web y Sistemas en Rafael Calzada</title>
-    <meta name="description" content="Especialista en digitalización de comercios en Rafael Calzada y Zona Sur. Menú QR Premium, Sistemas de Turnos e Industria 4.0.">
-    <meta name="keywords" content="desarrollo web rafael calzada, paginas web zona sur, menu digital qr, sistema de turnos, programador almirante brown, software para comercios">
-    <meta name="author" content="Miguel Benítez - CodeByMike7">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://codebymike7.github.io/mike-digital-solutions/">
-
-    <meta property="og:title" content="CodeByMike7 | Soluciones Digitales Inteligentes">
-    <meta property="og:description" content="Probá nuestras demos en vivo: Menú QR Interactivo, Turnos, Inmobiliaria y más. Diseñado para potenciar tu negocio.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://codebymike7.github.io/mike-digital-solutions/">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500">
-
+    <title>CodeByMike7 | Soluciones Digitales Rafael Calzada</title>
+    <meta name="description" content="Sistemas inteligentes para digitalizar comercios: Menús QR, Gestión de Limpieza, Turnos y más.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
         .demo-card {
-            background: white; border-radius: 1.5rem; padding: 1rem; margin-bottom: 0.8rem;
+            background: white; border-radius: 1.5rem; padding: 1.2rem; margin-bottom: 1rem;
             border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 1rem;
             transition: all 0.2s ease; text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-        .demo-card:active { transform: scale(0.97); background-color: #f1f5f9; }
+        .demo-card:active { transform: scale(0.96); background-color: #f1f5f9; }
         .icon-box {
-            width: 44px; height: 44px; border-radius: 12px;
+            width: 48px; height: 48px; border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
-            color: white; flex-shrink: 0; font-size: 1.1rem;
+            color: white; flex-shrink: 0; font-size: 1.2rem;
+        }
+        .badge-new {
+            background: #dbeafe; color: #2563eb; font-size: 9px; font-weight: 800;
+            padding: 2px 8px; border-radius: 99px; text-transform: uppercase;
         }
     </style>
 </head>
 <body class="bg-slate-50">
 
-    <nav class="bg-white/80 backdrop-blur-md p-4 border-b border-slate-200 sticky top-0 z-50">
+    <nav class="bg-white/90 backdrop-blur-md p-5 border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-md mx-auto flex justify-between items-center">
             <h1 class="font-black text-xl tracking-tighter text-slate-900">CODEBY<span class="text-blue-600">MIKE7</span></h1>
-            <div class="flex flex-col items-end">
-                <span class="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Rafael Calzada</span>
-                <a href="https://wa.me/541136139401" class="text-blue-600 text-[10px] font-bold uppercase">Contacto Directo</a>
-            </div>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Rafael Calzada</span>
         </div>
     </nav>
 
     <header class="p-8 text-center max-w-md mx-auto">
-        <h2 class="text-3xl font-extrabold leading-tight mb-3 text-slate-900">Portfolio de <span class="text-blue-600">Soluciones</span></h2>
-        <p class="text-slate-500 text-sm font-medium">Sistemas inteligentes para digitalizar tu negocio en Zona Sur.</p>
+        <div class="inline-block bg-blue-100 text-blue-700 text-[10px] font-black px-4 py-1 rounded-full mb-4 uppercase tracking-widest">
+            Portfolio 2026
+        </div>
+        <h2 class="text-3xl font-extrabold leading-tight mb-3 text-slate-900">Demos <span class="text-blue-600">Interactivas</span></h2>
+        <p class="text-slate-500 text-sm font-medium">Seleccioná una demo para ver cómo podemos transformar tu negocio.</p>
     </header>
 
     <main class="p-4 max-w-md mx-auto">
 
-        <a href="menu.html" class="demo-card border-l-4 border-l-orange-500 shadow-sm">
-            <div class="icon-box bg-orange-500 shadow-lg shadow-orange-100">
+        <a href="menu.html" class="demo-card border-l-4 border-l-orange-500">
+            <div class="icon-box bg-orange-500 shadow-lg shadow-orange-200">
                 <i class="fa-solid fa-utensils"></i>
             </div>
             <div class="flex-1">
-                <h3 class="font-bold text-slate-800 text-sm">Gastronomía Premium</h3>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">Menú QR Interactivo & Pedidos →</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <h3 class="font-bold text-slate-800 text-sm">Gastronomía Premium</h3>
+                    <span class="badge-new">Nuevo</span>
+                </div>
+                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider italic">Menú QR & Pedidos Automáticos →</p>
             </div>
         </a>
 
-        <a href="industria.html" class="demo-card">
-            <div class="icon-box bg-slate-800 shadow-lg shadow-slate-100">
-                <i class="fa-solid fa-industry"></i>
+        <a href="limpieza.html" class="demo-card border-l-4 border-l-blue-500">
+            <div class="icon-box bg-blue-600 shadow-lg shadow-blue-200">
+                <i class="fa-solid fa-pump-soap"></i>
             </div>
             <div class="flex-1">
-                <h3 class="font-bold text-slate-800 text-sm">Industria Automotriz</h3>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">Gestión Industrial B2B →</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <h3 class="font-bold text-slate-800 text-sm">Venta de Limpieza</h3>
+                    <span class="badge-new">Nuevo</span>
+                </div>
+                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider italic">Catálogo con Carrito de Compras →</p>
             </div>
         </a>
 
         <a href="turnos.html" class="demo-card">
-            <div class="icon-box bg-blue-600 shadow-lg shadow-blue-100">
+            <div class="icon-box bg-indigo-600 shadow-lg shadow-indigo-200">
                 <i class="fa-solid fa-scissors"></i>
             </div>
             <div class="flex-1">
                 <h3 class="font-bold text-slate-800 text-sm">Barbería & Estética</h3>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">Gestión de Turnos Online →</p>
+                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Sistema de Turnos Online →</p>
+            </div>
+        </a>
+
+        <a href="industria.html" class="demo-card">
+            <div class="icon-box bg-slate-800 shadow-lg shadow-slate-200">
+                <i class="fa-solid fa-industry"></i>
+            </div>
+            <div class="flex-1">
+                <h3 class="font-bold text-slate-800 text-sm">Industria B2B</h3>
+                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Gestión de Catálogos Pesados →</p>
             </div>
         </a>
 
         <a href="propiedades.html" class="demo-card">
-            <div class="icon-box bg-emerald-500 shadow-lg shadow-emerald-100">
-                <i class="fa-solid fa-house"></i>
+            <div class="icon-box bg-emerald-500 shadow-lg shadow-emerald-200">
+                <i class="fa-solid fa-house-chimney"></i>
             </div>
             <div class="flex-1">
                 <h3 class="font-bold text-slate-800 text-sm">Inmobiliaria</h3>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">Catálogo de Inmuebles →</p>
-            </div>
-        </a>
-
-        <a href="taller.html" class="demo-card">
-            <div class="icon-box bg-zinc-800 shadow-lg shadow-zinc-200">
-                <i class="fa-solid fa-car"></i>
-            </div>
-            <div class="flex-1">
-                <h3 class="font-bold text-slate-800 text-sm">Taller & Detailing</h3>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">Agenda de Servicios →</p>
-            </div>
-        </a>
-
-        <a href="fitness.html" class="demo-card">
-            <div class="icon-box bg-lime-500 shadow-lg shadow-lime-100">
-                <i class="fa-solid fa-dumbbell"></i>
-            </div>
-            <div class="flex-1">
-                <h3 class="font-bold text-slate-800 text-sm">Fitness & Gym</h3>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">Planes & Membresías →</p>
-            </div>
-        </a>
-
-        <a href="tienda.html" class="demo-card">
-            <div class="icon-box bg-pink-500 shadow-lg shadow-pink-100">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-            <div class="flex-1">
-                <h3 class="font-bold text-slate-800 text-sm">Tienda de Moda</h3>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">E-commerce Express →</p>
-            </div>
-        </a>
-
-        <a href="cosmetica.html" class="demo-card">
-            <div class="icon-box bg-fuchsia-500 shadow-lg shadow-fuchsia-100">
-                <i class="fa-solid fa-wand-sparkles"></i>
-            </div>
-            <div class="flex-1">
-                <h3 class="font-bold text-slate-800 text-sm">Cosmética</h3>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider">Venta por Catálogo →</p>
+                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Galería de Propiedades →</p>
             </div>
         </a>
 
         <a href="panel.html" class="demo-card bg-slate-900 border-none shadow-xl">
             <div class="icon-box bg-white text-slate-900">
-                <i class="fa-solid fa-chart-line"></i>
+                <i class="fa-solid fa-chart-pie"></i>
             </div>
             <div class="flex-1">
-                <h3 class="font-bold text-white text-sm">Panel de Gestión</h3>
-                <p class="text-blue-400 font-bold text-[9px] uppercase tracking-wider">Control Total del Negocio →</p>
+                <h3 class="font-bold text-white text-sm">Panel de Control</h3>
+                <p class="text-blue-400 font-bold text-[9px] uppercase tracking-wider italic">Gestión de Stock y Ventas →</p>
             </div>
         </a>
 
     </main>
 
-    <footer class="p-12 text-center bg-white mt-10 border-t border-slate-200">
+    <footer class="p-10 text-center bg-white mt-10 border-t border-slate-200">
         <div class="max-w-md mx-auto">
-            <h3 class="text-xl font-black text-slate-800 mb-2">Desarrollos a Medida</h3>
-            <p class="text-slate-500 text-xs mb-8 italic">Automatizá tu comercio con tecnología local de Rafael Calzada.</p>
-            
-            <button onclick="solicitarPresupuesto()" class="w-full bg-blue-600 text-white font-extrabold py-5 rounded-2xl shadow-xl shadow-blue-200 flex items-center justify-center gap-3 active:scale-95 transition-all">
+            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-4 italic">¿Necesitás algo a medida?</p>
+            <button onclick="contacto()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-blue-200 flex items-center justify-center gap-3 active:scale-95 transition-all">
                 <i class="fa-brands fa-whatsapp text-xl"></i>
-                SOLICITAR PRESUPUESTO
+                HABLEMOS POR WHATSAPP
             </button>
-
-            <div class="mt-12">
-                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em]">© 2026 CodeByMike7</div>
-            </div>
+            <p class="mt-8 text-[9px] font-bold text-slate-300 uppercase tracking-widest">CodeByMike7 • Rafael Calzada 2026</p>
         </div>
     </footer>
 
     <script>
-        function solicitarPresupuesto() {
-            const msj = "¡Hola Miguel! Me interesa un presupuesto para digitalizar mi comercio. Vi tus demos en el portfolio.";
+        function contacto() {
+            const msj = "Hola Mike! Vi tu portfolio y quiero consultarte por un sistema para mi negocio.";
             window.open(`https://wa.me/541136139401?text=${encodeURIComponent(msj)}`, '_blank');
         }
     </script>
