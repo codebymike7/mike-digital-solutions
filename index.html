@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeByMike7 | Soluciones Digitales Rafael Calzada</title>
+    <title>CodeByMike7 | Soluciones Digitales</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,22 +15,19 @@
             background: white; border-radius: 1.5rem; padding: 1.2rem; margin-bottom: 1rem;
             border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 1rem;
             transition: all 0.2s ease; text-decoration: none;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
         .demo-card:active { transform: scale(0.96); background-color: #f1f5f9; }
         .icon-box {
-            width: 48px; height: 48px; border-radius: 14px;
+            width: 46px; height: 46px; border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
-            color: white; flex-shrink: 0; font-size: 1.2rem;
+            color: white; flex-shrink: 0; font-size: 1.1rem;
         }
-        .badge-premium {
-            background: #fef3c7; color: #d97706; font-size: 9px; font-weight: 800;
-            padding: 2px 8px; border-radius: 99px; text-transform: uppercase;
-        }
-        .badge-new {
-            background: #dbeafe; color: #2563eb; font-size: 9px; font-weight: 800;
-            padding: 2px 8px; border-radius: 99px; text-transform: uppercase;
-        }
+        .badge-premium { background: #fef3c7; color: #d97706; font-size: 8px; font-weight: 800; padding: 2px 8px; border-radius: 99px; text-transform: uppercase; }
+        .badge-new { background: #dbeafe; color: #2563eb; font-size: 8px; font-weight: 800; padding: 2px 8px; border-radius: 99px; text-transform: uppercase; }
+        
+        /* Animación suave para la entrada */
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="bg-slate-50">
@@ -39,127 +36,108 @@
         <div class="max-w-md mx-auto flex justify-between items-center">
             <h1 class="font-black text-xl tracking-tighter text-slate-900">CODEBY<span class="text-blue-600">MIKE7</span></h1>
             <div class="flex flex-col items-end">
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Rafael Calzada</span>
-                <span class="text-[9px] font-bold text-blue-600 uppercase tracking-widest mt-1">Portfolio 2026</span>
+                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Digital Solutions</span>
+                <span class="text-[8px] font-bold text-blue-600 uppercase tracking-widest mt-0.5">V. 2.0.26</span>
             </div>
         </div>
     </nav>
 
     <header class="p-8 text-center max-w-md mx-auto">
-        <h2 class="text-3xl font-extrabold leading-tight mb-3 text-slate-900">Transformá tu <span class="text-blue-600">Negocio</span></h2>
-        <p class="text-slate-500 text-sm font-medium">Probá nuestras demos interactivas diseñadas para potenciar tus ventas.</p>
+        <h2 class="text-3xl font-extrabold leading-tight mb-3 text-slate-900">Demos <span class="text-blue-600">Pro</span></h2>
+        <p class="text-slate-500 text-sm font-medium">Tocá cualquier tarjeta para ver el sistema en acción.</p>
     </header>
 
-    <main class="p-4 max-w-md mx-auto">
+    <main class="p-4 max-w-md mx-auto fade-in">
 
-        <a href="menu.html" class="demo-card border-l-4 border-l-orange-500">
-            <div class="icon-box bg-orange-500 shadow-lg shadow-orange-100">
-                <i class="fa-solid fa-utensils"></i>
-            </div>
+        <a href="menu.html" class="demo-card border-l-4 border-l-orange-500 shadow-sm">
+            <div class="icon-box bg-orange-500"><i class="fa-solid fa-utensils"></i></div>
             <div class="flex-1">
                 <div class="flex items-center gap-2 mb-1">
                     <h3 class="font-bold text-slate-800 text-sm">Gastronomía Premium</h3>
-                    <span class="badge-premium">Hot</span>
+                    <span class="badge-premium">Best Seller</span>
                 </div>
-                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Menú QR & Pedidos Automáticos →</p>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider italic">Menú QR & Gestión de Pedidos</p>
             </div>
         </a>
 
-        <a href="limpieza.html" class="demo-card border-l-4 border-l-blue-600">
-            <div class="icon-box bg-blue-600 shadow-lg shadow-blue-100">
-                <i class="fa-solid fa-pump-soap"></i>
+        <a href="limpieza.html" class="demo-card border-l-4 border-l-blue-600 shadow-sm">
+            <div class="icon-box bg-blue-600"><i class="fa-solid fa-pump-soap"></i></div>
+            <div class="flex-1">
+                <h3 class="font-bold text-slate-800 text-sm mb-1">Distribuidora Limpieza</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider italic">Catálogo con Carrito de Compras</p>
             </div>
+        </a>
+
+        <a href="turnos.html" class="demo-card border-l-4 border-l-zinc-800 shadow-sm">
+            <div class="icon-box bg-zinc-800"><i class="fa-solid fa-scissors"></i></div>
+            <div class="flex-1">
+                <h3 class="font-bold text-slate-800 text-sm mb-1">Barbería & Estética</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider italic">Sistema de Turnos & Calendario</p>
+            </div>
+        </a>
+
+        <a href="propiedades.html" class="demo-card border-l-4 border-l-emerald-500 shadow-sm">
+            <div class="icon-box bg-emerald-500"><i class="fa-solid fa-house-chimney"></i></div>
+            <div class="flex-1">
+                <h3 class="font-bold text-slate-800 text-sm mb-1">Inmobiliaria Digital</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider italic">Galería de Propiedades & Filtros</p>
+            </div>
+        </a>
+
+        <a href="fitness.html" class="demo-card border-l-4 border-l-lime-500 shadow-sm">
+            <div class="icon-box bg-lime-500"><i class="fa-solid fa-dumbbell"></i></div>
+            <div class="flex-1">
+                <h3 class="font-bold text-slate-800 text-sm mb-1">Centro de Fitness</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider italic">Membresías & Planes de Entrenamiento</p>
+            </div>
+        </a>
+
+        <a href="tienda.html" class="demo-card border-l-4 border-l-pink-500 shadow-sm">
+            <div class="icon-box bg-pink-500"><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="flex-1">
+                <h3 class="font-bold text-slate-800 text-sm mb-1">Tienda de Moda</h3>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider italic">Catálogo Boutique con Talles</p>
+            </div>
+        </a>
+
+        <a href="industria.html" class="demo-card border-l-4 border-l-slate-600 shadow-sm">
+            <div class="icon-box bg-slate-600"><i class="fa-solid fa-industry"></i></div>
             <div class="flex-1">
                 <div class="flex items-center gap-2 mb-1">
-                    <h3 class="font-bold text-slate-800 text-sm">Distribuidora Limpieza</h3>
-                    <span class="badge-new">Nuevo</span>
+                    <h3 class="font-bold text-slate-800 text-sm">Catálogo Industrial</h3>
+                    <span class="badge-new">Actualizado</span>
                 </div>
-                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Catálogo con Carrito de Compras →</p>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider italic">Portal B2B & Repuestos Técnicos</p>
             </div>
         </a>
 
-        <a href="turnos.html" class="demo-card border-l-4 border-l-zinc-800">
-            <div class="icon-box bg-zinc-800 shadow-lg shadow-zinc-200">
-                <i class="fa-solid fa-scissors"></i>
-            </div>
+        <a href="panel.html" class="demo-card bg-slate-900 border-none shadow-xl mt-8">
+            <div class="icon-box bg-white text-slate-900"><i class="fa-solid fa-chart-line"></i></div>
             <div class="flex-1">
                 <div class="flex items-center gap-2 mb-1">
-                    <h3 class="font-bold text-slate-800 text-sm">Barbería & Estética</h3>
-                    <span class="badge-new">Nuevo</span>
+                    <h3 class="font-bold text-white text-sm">Panel Administrativo</h3>
+                    <span class="text-[8px] font-bold text-blue-400 uppercase tracking-widest">Internal Use</span>
                 </div>
-                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Sistema de Turnos Online →</p>
-            </div>
-        </a>
-
-        <a href="propiedades.html" class="demo-card border-l-4 border-l-emerald-500">
-            <div class="icon-box bg-emerald-500 shadow-lg shadow-emerald-100">
-                <i class="fa-solid fa-house-chimney"></i>
-            </div>
-            <div class="flex-1">
-                <div class="flex items-center gap-2 mb-1">
-                    <h3 class="font-bold text-slate-800 text-sm">Inmobiliaria Digital</h3>
-                    <span class="badge-new">Nuevo</span>
-                </div>
-                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Galería & Consulta de Ventas →</p>
-            </div>
-        </a>
-
-        <a href="fitness.html" class="demo-card border-l-4 border-l-lime-500">
-            <div class="icon-box bg-lime-500 shadow-lg shadow-lime-100">
-                <i class="fa-solid fa-dumbbell"></i>
-            </div>
-            <div class="flex-1">
-                <div class="flex items-center gap-2 mb-1">
-                    <h3 class="font-bold text-slate-800 text-sm">Centro de Fitness</h3>
-                    <span class="badge-new">Nuevo</span>
-                </div>
-                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Planes & Membresías VIP →</p>
-            </div>
-        </a>
-
-        <a href="tienda.html" class="demo-card border-l-4 border-l-pink-500">
-            <div class="icon-box bg-pink-500 shadow-lg shadow-pink-100">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-            <div class="flex-1">
-                <div class="flex items-center gap-2 mb-1">
-                    <h3 class="font-bold text-slate-800 text-sm">Tienda de Moda</h3>
-                    <span class="badge-new">Nuevo</span>
-                </div>
-                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Catálogo Estilo Boutique →</p>
-            </div>
-        </a>
-
-        <a href="panel.html" class="demo-card bg-slate-900 border-none shadow-xl mt-6">
-            <div class="icon-box bg-white text-slate-900">
-                <i class="fa-solid fa-chart-pie"></i>
-            </div>
-            <div class="flex-1">
-                <h3 class="font-bold text-white text-sm">Panel de Control</h3>
-                <p class="text-blue-400 font-bold text-[9px] uppercase tracking-wider italic">Gestión de Stock y Ventas →</p>
+                <p class="text-blue-300 font-bold text-[9px] uppercase tracking-wider italic">Control de Ventas & Métricas Pro</p>
             </div>
         </a>
 
     </main>
 
     <footer class="p-10 text-center bg-white mt-10 border-t border-slate-200">
-        <div class="max-w-md mx-auto">
-            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-6 italic">Tecnología de Rafael Calzada para el mundo</p>
+        <div class="max-w-md mx-auto text-center">
+            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-6 italic italic">Rafael Calzada • Buenos Aires</p>
             <button onclick="contacto()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-blue-200 flex items-center justify-center gap-3 active:scale-95 transition-all">
                 <i class="fa-brands fa-whatsapp text-xl"></i>
-                CONSULTAR PRESUPUESTO
+                HABLEMOS POR WHATSAPP
             </button>
-            <div class="mt-8 flex justify-center gap-4 text-slate-300 text-xs">
-                <span>CodeByMike7</span>
-                <span>•</span>
-                <span>2026</span>
-            </div>
+            <p class="mt-8 text-[9px] font-bold text-slate-300 uppercase tracking-widest">© 2026 CodeByMike7</p>
         </div>
     </footer>
 
     <script>
         function contacto() {
-            const msj = "Hola Mike! Estoy viendo tu portfolio. Me interesa consultarte por un desarrollo.";
+            const msj = "Hola Mike! Vi tus demos. Me interesa consultarte por un desarrollo para mi negocio.";
             window.open(`https://wa.me/541136139401?text=${encodeURIComponent(msj)}`, '_blank');
         }
     </script>
