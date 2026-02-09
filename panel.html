@@ -3,68 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Vision | CodeByMike7</title>
+    <title>Admin Dashboard | CodeByMike7</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        .stat-card { background: white; border-radius: 20px; padding: 20px; border: 1px solid #e2e8f0; }
+    </style>
 </head>
-<body class="bg-slate-50">
+<body class="pb-10">
 
-    <div class="max-w-6xl mx-auto p-6 md:p-10">
-        <header class="flex justify-between items-center mb-10">
-            <div>
-                <h1 class="text-3xl font-black tracking-tighter">MIKE<span class="text-blue-600">DASH</span></h1>
-                <p class="text-slate-400 text-sm font-bold">Resumen General de tu Negocio</p>
-            </div>
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center"><i class="fa-solid fa-bell"></i></div>
-                <div class="w-10 h-10 bg-blue-600 rounded-full"></div>
-            </div>
-        </header>
+    <nav class="p-6 flex justify-between items-center">
+        <button onclick="window.location.href='index.html'" class="text-slate-400"><i class="fa-solid fa-house"></i></button>
+        <h1 class="font-black text-xs uppercase tracking-[0.3em]">Gestión <span class="text-blue-600">Admin</span></h1>
+        <div class="w-8 h-8 bg-blue-600 rounded-full"></div>
+    </nav>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <div class="lg:col-span-2 bg-white p-8 rounded-[3rem] shadow-sm border border-slate-100">
-                <h2 class="font-black mb-6 flex justify-between">Ventas Semanales <span class="text-green-500">+12%</span></h2>
-                <canvas id="ventasChart" height="150"></canvas>
+    <main class="px-6 space-y-6">
+        
+        <div class="grid grid-cols-2 gap-4">
+            <div class="stat-card">
+                <p class="text-[10px] font-bold text-slate-400 uppercase">Ventas Hoy</p>
+                <h2 class="text-2xl font-black text-slate-800">$145.200</h2>
+                <p class="text-[10px] text-emerald-500 font-bold mt-1">+12% vs ayer</p>
             </div>
-
-            <div class="bg-slate-900 p-8 rounded-[3rem] text-white">
-                <h2 class="font-black mb-6">Alertas de Stock</h2>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center p-4 bg-white/5 rounded-2xl border border-white/10">
-                        <span class="text-sm">Pan de Burger</span>
-                        <span class="bg-red-500 px-2 py-1 rounded-lg text-[10px] font-bold">2 u.</span>
-                    </div>
-                    <div class="flex justify-between items-center p-4 bg-white/5 rounded-2xl border border-white/10">
-                        <span class="text-sm">Cheddar Feteado</span>
-                        <span class="bg-orange-500 px-2 py-1 rounded-lg text-[10px] font-bold">15 u.</span>
-                    </div>
-                </div>
-                <button class="w-full mt-10 py-4 bg-blue-600 rounded-2xl font-black text-sm">Hacer pedido a proveedor</button>
+            <div class="stat-card">
+                <p class="text-[10px] font-bold text-slate-400 uppercase">Pedidos</p>
+                <h2 class="text-2xl font-black text-slate-800">24</h2>
+                <p class="text-[10px] text-blue-500 font-bold mt-1">4 pendientes</p>
             </div>
-
         </div>
-    </div>
 
-    <script>
-        const ctx = document.getElementById('ventasChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'],
-                datasets: [{
-                    label: 'Ingresos ($)',
-                    data: [12000, 19000, 15000, 25000, 32000, 45000, 38000],
-                    borderColor: '#2563eb',
-                    borderWidth: 4,
-                    tension: 0.4,
-                    fill: true,
-                    backgroundColor: 'rgba(37, 99, 235, 0.05)'
-                }]
-            },
-            options: { plugins: { legend: { display: false } } }
-        });
-    </script>
+        <div class="stat-card">
+            <h3 class="text-xs font-black uppercase mb-4">Rendimiento Semanal</h3>
+            <div class="h-32 w-full bg-slate-50 rounded-xl flex items-end justify-between p-4 gap-2">
+                <div class="bg-blue-200 w-full h-[40%] rounded-t-sm"></div>
+                <div class="bg-blue-300 w-full h-[60%] rounded-t-sm"></div>
+                <div class="bg-blue-400 w-full h-[30%] rounded-t-sm"></div>
+                <div class="bg-blue-500 w-full h-[90%] rounded-t-sm"></div>
+                <div class="bg-blue-600 w-full h-[75%] rounded-t-sm"></div>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <h3 class="text-xs font-black uppercase mb-4">Últimos Pedidos</h3>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center border-b border-slate-50 pb-2">
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-[10px] font-bold">PZ</div>
+                        <div>
+                            <p class="text-[11px] font-bold">Pizza Napo x2</p>
+                            <p class="text-[9px] text-slate-400">Hace 5 min</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] font-black">$9.000</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-[10px] font-bold">LM</div>
+                        <div>
+                            <p class="text-[11px] font-bold">Combo Limpieza</p>
+                            <p class="text-[9px] text-slate-400">Hace 12 min</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] font-black">$12.500</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
 </body>
 </html>
