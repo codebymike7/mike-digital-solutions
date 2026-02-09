@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeByMike7 | Soluciones Digitales Rafael Calzada</title>
-    <meta name="description" content="Sistemas inteligentes para digitalizar comercios: Menús QR, Gestión de Limpieza, Turnos y más.">
+    <title>CodeByMike7 | Portfolio de Soluciones Digitales</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,6 +23,10 @@
             display: flex; align-items: center; justify-content: center;
             color: white; flex-shrink: 0; font-size: 1.2rem;
         }
+        .badge-premium {
+            background: #fef3c7; color: #d97706; font-size: 9px; font-weight: 800;
+            padding: 2px 8px; border-radius: 99px; text-transform: uppercase;
+        }
         .badge-new {
             background: #dbeafe; color: #2563eb; font-size: 9px; font-weight: 800;
             padding: 2px 8px; border-radius: 99px; text-transform: uppercase;
@@ -35,77 +38,96 @@
     <nav class="bg-white/90 backdrop-blur-md p-5 border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-md mx-auto flex justify-between items-center">
             <h1 class="font-black text-xl tracking-tighter text-slate-900">CODEBY<span class="text-blue-600">MIKE7</span></h1>
-            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Rafael Calzada</span>
+            <div class="flex flex-col items-end">
+                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none">Rafael Calzada</span>
+                <span class="text-[9px] font-bold text-blue-600 uppercase tracking-widest mt-1">Portfolio 2026</span>
+            </div>
         </div>
     </nav>
 
     <header class="p-8 text-center max-w-md mx-auto">
-        <div class="inline-block bg-blue-100 text-blue-700 text-[10px] font-black px-4 py-1 rounded-full mb-4 uppercase tracking-widest">
-            Portfolio 2026
-        </div>
-        <h2 class="text-3xl font-extrabold leading-tight mb-3 text-slate-900">Demos <span class="text-blue-600">Interactivas</span></h2>
-        <p class="text-slate-500 text-sm font-medium">Seleccioná una demo para ver cómo podemos transformar tu negocio.</p>
+        <h2 class="text-3xl font-extrabold leading-tight mb-3 text-slate-900">Transformá tu <span class="text-blue-600">Negocio</span></h2>
+        <p class="text-slate-500 text-sm font-medium">Demos interactivas diseñadas para potenciar ventas y automatizar pedidos.</p>
     </header>
 
     <main class="p-4 max-w-md mx-auto">
 
         <a href="menu.html" class="demo-card border-l-4 border-l-orange-500">
-            <div class="icon-box bg-orange-500 shadow-lg shadow-orange-200">
+            <div class="icon-box bg-orange-500 shadow-lg shadow-orange-100">
                 <i class="fa-solid fa-utensils"></i>
             </div>
             <div class="flex-1">
                 <div class="flex items-center gap-2 mb-1">
                     <h3 class="font-bold text-slate-800 text-sm">Gastronomía Premium</h3>
-                    <span class="badge-new">Nuevo</span>
+                    <span class="badge-premium">Hot</span>
                 </div>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider italic">Menú QR & Pedidos Automáticos →</p>
+                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Menú QR & Pedidos Automáticos →</p>
             </div>
         </a>
 
-        <a href="limpieza.html" class="demo-card border-l-4 border-l-blue-500">
-            <div class="icon-box bg-blue-600 shadow-lg shadow-blue-200">
+        <a href="limpieza.html" class="demo-card border-l-4 border-l-blue-600">
+            <div class="icon-box bg-blue-600 shadow-lg shadow-blue-100">
                 <i class="fa-solid fa-pump-soap"></i>
             </div>
             <div class="flex-1">
                 <div class="flex items-center gap-2 mb-1">
-                    <h3 class="font-bold text-slate-800 text-sm">Venta de Limpieza</h3>
+                    <h3 class="font-bold text-slate-800 text-sm">Distribuidora Limpieza</h3>
                     <span class="badge-new">Nuevo</span>
                 </div>
-                <p class="text-blue-600 font-bold text-[9px] uppercase tracking-wider italic">Catálogo con Carrito de Compras →</p>
+                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Catálogo con Carrito de Compras →</p>
             </div>
         </a>
 
-        <a href="turnos.html" class="demo-card">
-            <div class="icon-box bg-indigo-600 shadow-lg shadow-indigo-200">
+        <a href="turnos.html" class="demo-card border-l-4 border-l-zinc-800">
+            <div class="icon-box bg-zinc-800 shadow-lg shadow-zinc-200">
                 <i class="fa-solid fa-scissors"></i>
             </div>
             <div class="flex-1">
-                <h3 class="font-bold text-slate-800 text-sm">Barbería & Estética</h3>
+                <div class="flex items-center gap-2 mb-1">
+                    <h3 class="font-bold text-slate-800 text-sm">Barbería & Estética</h3>
+                    <span class="badge-new">Nuevo</span>
+                </div>
                 <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Sistema de Turnos Online →</p>
             </div>
         </a>
 
+        <a href="propiedades.html" class="demo-card border-l-4 border-l-emerald-500">
+            <div class="icon-box bg-emerald-500 shadow-lg shadow-emerald-100">
+                <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                    <h3 class="font-bold text-slate-800 text-sm">Inmobiliaria Digital</h3>
+                    <span class="badge-new">Nuevo</span>
+                </div>
+                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Galería & Consulta de Ventas →</p>
+            </div>
+        </a>
+
+        <a href="fitness.html" class="demo-card border-l-4 border-l-lime-500">
+            <div class="icon-box bg-lime-500 shadow-lg shadow-lime-100">
+                <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                    <h3 class="font-bold text-slate-800 text-sm">Centro de Fitness</h3>
+                    <span class="badge-new">Nuevo</span>
+                </div>
+                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Planes & Membresías VIP →</p>
+            </div>
+        </a>
+
         <a href="industria.html" class="demo-card">
-            <div class="icon-box bg-slate-800 shadow-lg shadow-slate-200">
+            <div class="icon-box bg-slate-400 shadow-lg shadow-slate-100">
                 <i class="fa-solid fa-industry"></i>
             </div>
             <div class="flex-1">
                 <h3 class="font-bold text-slate-800 text-sm">Industria B2B</h3>
-                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Gestión de Catálogos Pesados →</p>
+                <p class="text-slate-400 font-bold text-[9px] uppercase tracking-wider italic">Catálogos de Repuestos →</p>
             </div>
         </a>
 
-        <a href="propiedades.html" class="demo-card">
-            <div class="icon-box bg-emerald-500 shadow-lg shadow-emerald-200">
-                <i class="fa-solid fa-house-chimney"></i>
-            </div>
-            <div class="flex-1">
-                <h3 class="font-bold text-slate-800 text-sm">Inmobiliaria</h3>
-                <p class="text-slate-500 font-bold text-[9px] uppercase tracking-wider italic">Galería de Propiedades →</p>
-            </div>
-        </a>
-
-        <a href="panel.html" class="demo-card bg-slate-900 border-none shadow-xl">
+        <a href="panel.html" class="demo-card bg-slate-900 border-none shadow-xl mt-6">
             <div class="icon-box bg-white text-slate-900">
                 <i class="fa-solid fa-chart-pie"></i>
             </div>
@@ -119,18 +141,22 @@
 
     <footer class="p-10 text-center bg-white mt-10 border-t border-slate-200">
         <div class="max-w-md mx-auto">
-            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-4 italic">¿Necesitás algo a medida?</p>
+            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-6 italic italic">Tecnología de Rafael Calzada para el mundo</p>
             <button onclick="contacto()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-blue-200 flex items-center justify-center gap-3 active:scale-95 transition-all">
                 <i class="fa-brands fa-whatsapp text-xl"></i>
-                HABLEMOS POR WHATSAPP
+                CONSULTAR PRESUPUESTO
             </button>
-            <p class="mt-8 text-[9px] font-bold text-slate-300 uppercase tracking-widest">CodeByMike7 • Rafael Calzada 2026</p>
+            <div class="mt-8 flex justify-center gap-4 text-slate-300 text-xs">
+                <span>CodeByMike7</span>
+                <span>•</span>
+                <span>2026</span>
+            </div>
         </div>
     </footer>
 
     <script>
         function contacto() {
-            const msj = "Hola Mike! Vi tu portfolio y quiero consultarte por un sistema para mi negocio.";
+            const msj = "Hola Mike! Estoy viendo tu portfolio. Me interesa consultarte por un desarrollo.";
             window.open(`https://wa.me/541136139401?text=${encodeURIComponent(msj)}`, '_blank');
         }
     </script>
