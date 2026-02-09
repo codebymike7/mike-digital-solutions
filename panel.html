@@ -6,73 +6,118 @@
     <title>Admin Dashboard | CodeByMike7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; color: #1e293b; }
-        .stat-card { background: white; border-radius: 20px; padding: 20px; border: 1px solid #e2e8f0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .glass-card { background: white; border-radius: 24px; border: 1px solid #f1f5f9; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.02); }
+        .nav-item.active { color: #2563eb; position: relative; }
+        .nav-item.active::after { content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background: #2563eb; border-radius: 50%; }
     </style>
 </head>
-<body class="pb-10">
+<body class="pb-32">
 
-    <nav class="p-6 flex justify-between items-center">
-        <button onclick="window.location.href='index.html'" class="text-slate-400"><i class="fa-solid fa-house"></i></button>
-        <h1 class="font-black text-xs uppercase tracking-[0.3em]">Gestión <span class="text-blue-600">Admin</span></h1>
-        <div class="w-8 h-8 bg-blue-600 rounded-full"></div>
-    </nav>
+    <header class="p-6 flex justify-between items-center">
+        <div>
+            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Hola Mike, buen día</p>
+            <h1 class="text-xl font-extrabold text-slate-900">Tu Negocio Hoy</h1>
+        </div>
+        <div class="relative">
+            <div class="w-10 h-10 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 border-2 border-white rounded-full"></span>
+        </div>
+    </header>
 
     <main class="px-6 space-y-6">
-        
-        <div class="grid grid-cols-2 gap-4">
-            <div class="stat-card">
-                <p class="text-[10px] font-bold text-slate-400 uppercase">Ventas Hoy</p>
-                <h2 class="text-2xl font-black text-slate-800">$145.200</h2>
-                <p class="text-[10px] text-emerald-500 font-bold mt-1">+12% vs ayer</p>
-            </div>
-            <div class="stat-card">
-                <p class="text-[10px] font-bold text-slate-400 uppercase">Pedidos</p>
-                <h2 class="text-2xl font-black text-slate-800">24</h2>
-                <p class="text-[10px] text-blue-500 font-bold mt-1">4 pendientes</p>
-            </div>
-        </div>
 
-        <div class="stat-card">
-            <h3 class="text-xs font-black uppercase mb-4">Rendimiento Semanal</h3>
-            <div class="h-32 w-full bg-slate-50 rounded-xl flex items-end justify-between p-4 gap-2">
-                <div class="bg-blue-200 w-full h-[40%] rounded-t-sm"></div>
-                <div class="bg-blue-300 w-full h-[60%] rounded-t-sm"></div>
-                <div class="bg-blue-400 w-full h-[30%] rounded-t-sm"></div>
-                <div class="bg-blue-500 w-full h-[90%] rounded-t-sm"></div>
-                <div class="bg-blue-600 w-full h-[75%] rounded-t-sm"></div>
-            </div>
-        </div>
-
-        <div class="stat-card">
-            <h3 class="text-xs font-black uppercase mb-4">Últimos Pedidos</h3>
-            <div class="space-y-4">
-                <div class="flex justify-between items-center border-b border-slate-50 pb-2">
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-[10px] font-bold">PZ</div>
-                        <div>
-                            <p class="text-[11px] font-bold">Pizza Napo x2</p>
-                            <p class="text-[9px] text-slate-400">Hace 5 min</p>
-                        </div>
-                    </div>
-                    <span class="text-[11px] font-black">$9.000</span>
+        <div class="bg-slate-900 p-8 rounded-[2.5rem] text-white shadow-2xl shadow-blue-200">
+            <p class="text-xs font-medium opacity-60 mb-2 italic">Ventas Totales (Febrero)</p>
+            <h2 class="text-4xl font-black tracking-tight mb-6">$845.200,00</h2>
+            <div class="flex justify-between items-center bg-white/10 p-4 rounded-2xl backdrop-blur-md">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-arrow-up text-emerald-400"></i>
+                    <span class="text-xs font-bold">+15.4% este mes</span>
                 </div>
-                <div class="flex justify-between items-center">
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-[10px] font-bold">LM</div>
+                <button class="text-[10px] font-black uppercase tracking-widest bg-white text-slate-900 px-4 py-2 rounded-xl">Retirar</button>
+            </div>
+        </div>
+
+        <section class="grid grid-cols-4 gap-4">
+            <div class="flex flex-col items-center gap-2">
+                <div class="w-12 h-12 glass-card flex items-center justify-center text-blue-600"><i class="fa-solid fa-plus"></i></div>
+                <span class="text-[9px] font-bold uppercase text-slate-500">Producto</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <div class="w-12 h-12 glass-card flex items-center justify-center text-orange-500"><i class="fa-solid fa-percent"></i></div>
+                <span class="text-[9px] font-bold uppercase text-slate-500">Oferta</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <div class="w-12 h-12 glass-card flex items-center justify-center text-emerald-500"><i class="fa-solid fa-qrcode"></i></div>
+                <span class="text-[9px] font-bold uppercase text-slate-500">Mi QR</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <div class="w-12 h-12 glass-card flex items-center justify-center text-purple-500"><i class="fa-solid fa-users"></i></div>
+                <span class="text-[9px] font-bold uppercase text-slate-500">Clientes</span>
+            </div>
+        </section>
+
+        <div class="glass-card p-6">
+            <h3 class="text-xs font-black uppercase text-slate-400 mb-6 flex justify-between">
+                Actividad Semanal
+                <span class="text-blue-600">Ver Reporte</span>
+            </h3>
+            <div class="flex items-end justify-between h-32 gap-3 px-2">
+                <div class="w-full bg-slate-100 rounded-t-lg h-[40%]"></div>
+                <div class="w-full bg-slate-100 rounded-t-lg h-[60%]"></div>
+                <div class="w-full bg-slate-100 rounded-t-lg h-[30%]"></div>
+                <div class="w-full bg-blue-600 rounded-t-lg h-[95%] shadow-lg shadow-blue-200"></div>
+                <div class="w-full bg-slate-100 rounded-t-lg h-[50%]"></div>
+                <div class="w-full bg-slate-100 rounded-t-lg h-[70%]"></div>
+                <div class="w-full bg-slate-100 rounded-t-lg h-[45%]"></div>
+            </div>
+            <div class="flex justify-between mt-4 text-[8px] font-bold text-slate-300 uppercase tracking-widest px-1">
+                <span>Lun</span><span>Mar</span><span>Mie</span><span>Jue</span><span>Vie</span><span>Sab</span><span>Dom</span>
+            </div>
+        </div>
+
+        <div class="glass-card p-6">
+            <h3 class="text-xs font-black uppercase text-slate-400 mb-4 italic">Pedidos por procesar</h3>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center p-3 bg-slate-50 rounded-2xl">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-orange-500 text-white rounded-xl flex items-center justify-center font-black">P</div>
                         <div>
-                            <p class="text-[11px] font-bold">Combo Limpieza</p>
-                            <p class="text-[9px] text-slate-400">Hace 12 min</p>
+                            <p class="text-xs font-bold">Pizza Calabresa x2</p>
+                            <p class="text-[9px] text-slate-400">Hace 4 minutos</p>
                         </div>
                     </div>
-                    <span class="text-[11px] font-black">$12.500</span>
+                    <span class="text-xs font-black text-slate-900">$18.400</span>
+                </div>
+                <div class="flex justify-between items-center p-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-500 text-white rounded-xl flex items-center justify-center font-black">L</div>
+                        <div>
+                            <p class="text-xs font-bold">Detergente 5L x3</p>
+                            <p class="text-[9px] text-slate-400">Hace 15 minutos</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-black text-slate-900">$22.100</span>
                 </div>
             </div>
         </div>
 
     </main>
+
+    <nav class="fixed bottom-6 left-6 right-6 h-16 bg-white/90 backdrop-blur-xl border border-slate-200 rounded-3xl flex items-center justify-around px-4 shadow-xl">
+        <button class="nav-item active text-lg"><i class="fa-solid fa-house-user"></i></button>
+        <button class="nav-item text-slate-300 text-lg"><i class="fa-solid fa-box-archive"></i></button>
+        <button onclick="window.location.href='index.html'" class="w-12 h-12 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200 flex items-center justify-center mb-8 border-4 border-slate-50">
+            <i class="fa-solid fa-rocket"></i>
+        </button>
+        <button class="nav-item text-slate-300 text-lg"><i class="fa-solid fa-wallet"></i></button>
+        <button class="nav-item text-slate-300 text-lg"><i class="fa-solid fa-gear"></i></button>
+    </nav>
 
 </body>
 </html>
