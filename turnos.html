@@ -3,39 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva Elite | CodeByMike7</title>
+    <title>Reserva de Turnos | CodeByMike7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .active-choice { border-color: #2563eb !important; background-color: #eff6ff !important; color: #2563eb !important; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0a0a0a; color: #eee; }
+        .gold-border { border: 1px solid rgba(212, 175, 55, 0.3); }
+        .service-card { background: #1a1a1a; border-radius: 20px; transition: all 0.3s; }
+        .service-card.active { border-color: #d4af37; background: #262626; }
+        .time-slot { background: #262626; border: 1px solid #333; transition: all 0.2s; }
+        .time-slot.selected { background: #d4af37; color: #000; border-color: #d4af37; font-weight: 800; }
+        .modal-booking { display: none; }
+        .modal-booking.active { display: flex; }
     </style>
 </head>
-<body class="bg-slate-50 pb-20">
+<body class="pb-32">
 
-    <header class="bg-white p-6 shadow-sm mb-8 sticky top-0 z-10">
-        <div class="max-w-md mx-auto text-center">
-            <h1 class="text-xl font-black tracking-tighter">MIKE BARBER SHOP 💈</h1>
+    <header class="relative h-64 w-full overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-50">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
+        <div class="absolute top-6 left-6">
+            <button onclick="window.location.href='index.html'" class="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center border border-white/10">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+        </div>
+        <div class="absolute bottom-6 left-8">
+            <h1 class="text-4xl font-black tracking-tighter italic">OLD SCHOOL <span class="text-[#d4af37]">BARBER</span></h1>
+            <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.3em] mt-1">Rafael Calzada • Estilo & Clase</p>
         </div>
     </header>
 
-    <main class="max-w-md mx-auto px-6 space-y-10">
-        
-        <section>
-            <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">1. Elegí tu Barbero</h2>
-            <div class="grid grid-cols-2 gap-4">
-                <button onclick="setPro(this, 'Mike')" class="pro-btn p-4 border-2 border-slate-100 bg-white rounded-2xl transition-all">
-                    <img src="https://ui-avatars.com/api/?name=Mike+B&background=2563eb&color=fff" class="w-12 h-12 rounded-full mx-auto mb-2">
-                    <p class="font-bold text-sm">Mike</p>
-                </button>
-                <button onclick="setPro(this, 'Nico')" class="pro-btn p-4 border-2 border-slate-100 bg-white rounded-2xl transition-all">
-                    <img src="https://ui-avatars.com/api/?name=Nico+S&background=cbd5e1&color=64748b" class="w-12 h-12 rounded-full mx-auto mb-2">
-                    <p class="font-bold text-sm">Nico</p>
-                </button>
+    <section class="p-6">
+        <h3 class="text-[10px] font-black text-[#d4af37] uppercase tracking-[0.3em] mb-4">Seleccioná tu servicio</h3>
+        <div class="space-y-3">
+            
+            <div class="service-card p-4 flex justify-between items-center gold-border" onclick="selectService(this, 'Corte Clásico', '2500')">
+                <div class="flex gap-4 items-center">
+                    <div class="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center text-[#d4af37]">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Corte Clásico</h4>
+                        <p class="text-[10px] text-slate-500 italic">45 min • Lavado incluido</p>
+                    </div>
+                </div>
+                <span class="font-black text-sm">$2.500</span>
             </div>
-        </section>
 
-        <section>
-            <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">2. ¿Qué te vas a hacer?</h2>
-            <select id="servicio" class="w-full p-4 rounded-2xl border-2 border-slate-100 bg-white font-bold outline-none focus:border-blue
+            <div class="service-card p-4 flex justify-between items-center border border-transparent" onclick="selectService(this, 'Barba & Perfilado', '1800')">
+                <div class="flex gap-4 items-center">
+                    <div class="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center text-[#d4af37]">
+                        <i class="fa-solid fa-razor-blade"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Barba & Perfilado</h4>
+                        <p class="text-[10px] text-slate-500 italic">30 min • Toalla caliente</p>
+                    </div>
+                </div>
+                <span class="font-black text-sm">$1.800</span>
+            </div>
+
+            <div class="service-card p-4 flex justify-between items-center border border-transparent" onclick="selectService(this, 'Combo Premium', '4000')">
+                <div class="flex gap-4 items-center">
+                    <div class="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center text-[#d4af37]">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Combo Premium</h4>
+                        <p class="text-[10px] text-slate-500 italic">75 min • Corte + Barba + Exfoliación</p>
+                    </div>
+                </div>
+                <span class="font-black text-sm">$4.000</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="p-6 pt-0">
+        <h3 class="text-[10px] font-black text-[#d4af37] uppercase tracking-[0.3em] mb-4">Horarios para Hoy</h3>
+        <div class="grid grid-cols-4 gap-2">
+            <button class="time-slot py-3 rounded-xl text-[10px] font-bold" onclick="selectTime(this)">10:00</button>
+            <button class="time-slot py-3 rounded-xl text-[10px] font-bold" onclick="selectTime(this)">11:00</button>
+            <button class="time-slot py-3 rounded-xl text-[10px] font-bold opacity-30 cursor-not-allowed" disabled>14:00</button>
+            <button class="time-slot py-3 rounded-xl text-[10px] font-bold" onclick="selectTime(this)">15:30</button>
+            <button class="time-slot py-3 rounded-xl text-[10px] font-bold" onclick="selectTime(this)">17:00</button>
+            <button class="time-slot py-3 rounded-xl text-[10px] font-bold" onclick="selectTime(this)">18:00</button>
+            <button class="time-slot py-3 rounded-xl text-[10px] font-bold" onclick="selectTime(this)">19:00</button>
+            <button class="time-slot py-3 rounded-xl text-[10px] font-bold" onclick="selectTime(this)">20:00</button>
+        </div>
+    </section>
+
+    <div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black to-transparent">
+        <button onclick="confirmBooking()" class="w-full bg-[#d4af37] text-black h-16 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-yellow-900/20 active:scale-95 transition-all">
+            Reservar Turno Ahora
+        </button>
+    </div>
+
+    <script>
+        let selectedSvc = "Corte Clásico";
+        let selectedHour = "";
+
+        function selectService(el, name, price) {
+            document.querySelectorAll('.service-card').forEach(c => {
+                c.classList.remove('gold-border', 'active');
+                c.classList.add('border-transparent');
+            });
+            el.classList.add('gold-border', 'active');
+            el.classList.remove('border-transparent');
+            selectedSvc = name;
+        }
+
+        function selectTime(el) {
+            document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedHour = el.innerText;
+        }
+
+        function confirmBooking() {
+            if(!selectedHour) {
+                alert("Por favor, seleccioná un horario.");
+                return;
+            }
+            const msj = `¡Hola! Quiero reservar un turno para *${selectedSvc}* a las *${selectedHour}hs*.`;
+            window.open(`https://wa.me/541136139401?text=${encodeURIComponent(msj)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
